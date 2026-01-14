@@ -9,8 +9,9 @@ ellipsis = 0
 while x != 20:
     x += 1
     ellipsisMessage = ("InfoTechCenter OS Booting Up" + "." * ellipsis)
+    wellipsisMessage = ("   ")
     ellipsis += 1
-    sys.stdout.write("\r" + ellipsisMessage + "   ")
+    sys.stdout.write("\r\033[K" + ellipsisMessage)
     time.sleep(.5)
     if ellipsis == 4:
         ellipsis = 0
