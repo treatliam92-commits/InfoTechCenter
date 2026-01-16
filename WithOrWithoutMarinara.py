@@ -8,7 +8,7 @@ x = 0
 ellipsis = 0
 while x != 20:
     x += 1
-    ellipsisMessage = ("InfoTechCenter OS Booting Up" + "." * ellipsis)
+    ellipsisMessage = ("\033[33mInfoTechCenter OS Booting Up\033[0m" + "." * ellipsis)
     wellipsisMessage = ("   ")
     ellipsis += 1
     sys.stdout.write("\r\033[K" + ellipsisMessage)
@@ -16,4 +16,4 @@ while x != 20:
     if ellipsis == 4:
         ellipsis = 0
     if x == 20:
-        print("\nOperating System Booted Up - Print Scanned - Access Granted")
+        print("\n\033[32mOperating System Booted Up - Print Scanned - Access Granted\033[0m")
