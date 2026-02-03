@@ -17,11 +17,41 @@ def random_gas_tank_status(tank_capacity=50):
 # Simulated nearby gas stations
 # -----------------------------
 gas_stations = [
-    {"name": "Shell", "price": round(random.uniform(2.4, 3.7), 2), "distance": round(random.uniform(1, 30), 1)},
-    {"name": "Chevron", "price": round(random.uniform(2.4, 3.7), 2), "distance": round(random.uniform(1, 30), 1)},
-    {"name": "Exxon", "price": round(random.uniform(2.4, 3.7), 2), "distance": round(random.uniform(1, 30), 1)},
-    {"name": "BP", "price": round(random.uniform(2.4, 3.7), 2), "distance": round(random.uniform(1, 30), 1)},
-    {"name": "Costco Gas", "price": round(random.uniform(2.4, 3.7), 2), "distance": round(random.uniform(1, 30), 1)}
+    {
+        "name": "Shell",
+        "price": round(random.uniform(2.4, 3.7), 2),
+        "distance": round(random.uniform(1, 30), 1),
+        "snacks": random.choice([True, False]),
+        "slushies": random.choice([True, False])
+    },
+    {
+        "name": "Chevron",
+        "price": round(random.uniform(2.4, 3.7), 2),
+        "distance": round(random.uniform(1, 30), 1),
+        "snacks": random.choice([True, False]),
+        "slushies": random.choice([True, False])
+    },
+    {
+        "name": "Exxon",
+        "price": round(random.uniform(2.4, 3.7), 2),
+        "distance": round(random.uniform(1, 30), 1),
+        "snacks": random.choice([True, False]),
+        "slushies": random.choice([True, False])
+    },
+    {
+        "name": "BP",
+        "price": round(random.uniform(2.4, 3.7), 2),
+        "distance": round(random.uniform(1, 30), 1),
+        "snacks": random.choice([True, False]),
+        "slushies": random.choice([True, False])
+    },
+    {
+        "name": "Costco Gas",
+        "price": round(random.uniform(2.4, 3.7), 2),
+        "distance": round(random.uniform(1, 30), 1),
+        "snacks": random.choice([True, False]),
+        "slushies": random.choice([True, False])
+    }
 ]
 
 
@@ -78,6 +108,17 @@ else:
         print(f"🏪 Name: {best_station['name']}")
         print(f"💲 Price: ${best_station['price']} / gallon")
         print(f"📍 Distance: {best_station['distance']} miles away")
+
+        # Snack info
+        if best_station["snacks"]:
+            print("🍫 Snacks Available: Yes")
+        else:
+            print("🍫 Snacks Available: No")
+
+        if best_station["slushies"]:
+            print("🥤 Slushies Available: Yes")
+        else:
+            print("🥤 Slushies Available: No")
 
         wakeup_minutes = calculate_wakeup_adjustment(
             best_station["distance"], fuel_percent
